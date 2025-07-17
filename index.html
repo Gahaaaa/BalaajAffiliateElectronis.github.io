@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image with Link Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      border: 3px solid #ccc;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .container img {
+      width: 200px;
+      height: auto;
+      border: 2px solid #888;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="Screenshot_20250716_152625.jpg" alt="Product Image" id="product-image">
+    <br>
+    <button id="view-button">View now</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("view-button");
+
+      if (button) {
+        button.addEventListener("click", function () {
+          window.open("https://s.click.aliexpress.com/e/_opQYBz0", "_blank");
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
