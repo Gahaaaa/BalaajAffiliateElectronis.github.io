@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Commerce Page</title>
+  
+  <style>
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .top-video-section {
+    width: 100vw;
+    height: 300px; /* Or adjust as needed */
+    overflow: hidden;
+    position: relative
+  }
+
+  .top-video-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+
+
+
+  
+  @media (max-width: 768px) {
+    .product-row {
+      padding: 10px 12px; /* narrower padding on smaller screens */
+    }
+    .section .product-card {
+      font-size: 13px;
+      padding: 8px;
+      max-width: 140px;
+      
+    }
+
+    .section .product-card img {
+      height: 80px;
+      
+    }
+
+    .section .product-name {
+      font-size: 13px;
+    }
+
+    .section .product-price {
+      font-size: 12px;
+      
+    }
+
+    .section .sales {
+      font-size: 11px;
+    }
+
+    .section .buttons {
+      gap: 5px;
+    }
+
+    .section .view-btn,
+    .section .cart-btn {
+      padding: 6px 8px;
+      font-size: 11px;
+    }
+  }
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('Sales Product Website_20250721_161313_0000.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+    /* === Top Video Banner === */
+  body {
+  margin: 0;
+}
+
+.top-video-section {
+  position: relative;
+  width: 100vw;
+  height: 300px; /* Adjust height as needed */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.top-video-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+    /* === Ad Space === */
+    .ad-space {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .ad-space-placeholder {
+      display: inline-block;
+      background-color: #333;
+      color: #ccc;
+      padding: 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 2px dashed #666;
+    }
+    
+    
+  .section-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 30px 20px 10px;
+  overflow: hidden;
+}
+
+.section-title .bar {
+  color: pink;
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+.section-title .text {
+  display: inline-block;
+  transform: translateX(-100%);
+  animation: slideIn 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+}
+
+/* "More Products" title styling */
+.more-products-title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+  border-bottom: 2px solid lightpink;
+  font-weight: 600;
+  text-shadow: 0 0 5px #ffccff;
+}
+
+
+
+        /* === Product Row === */
+  
+  .product-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-block: 10px;       /* top and bottom padding */
+    padding-inline: 20px;      /* left and right padding */
+    scroll-behavior: smooth;
+    scrollbar-color: #666 transparent; /* optional styling */
+    scrollbar-width: thin;             /* Firefox */
+  }
+  
+  .product-row::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .product-row::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 3px;
+  }
+
+
+    /* === Product Card === */
+    .product-card {
+      background-color: #f4f4f4;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+      flex: 0 0 auto;
+      color: #000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .product-by {
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      margin-bottom: 5px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: 6px;
+    }
+
+    .new-price {
+      color: green;
+      font-weight: bold;
+    }
+
+    .sales {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-btn {
+      background-color: #eee;
+      border: none;
+      padding: 6px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .view-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .view-btn:hover {
+      background-color: #0056b3;
+    }
+  
+
+  .about-us-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 18px;
+  border: 2px solid rgba(200, 150, 255, 0.5);
+  color: white;
+  background-color: transparent;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.about-us-btn:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+  </style>
+</head>
+<body>
+  
+  <!-- === Top White Banner === -->
+<div class="top-video-section">
+  <video autoplay muted loop playsinline preload="auto" style="object-fit: cover;" id="topVideo">
+  <source src="Purple Modern Animated Artificial Intelligence Video_20250721_165214_0001.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<a href="#about-us" class="about-us-btn">About us</a>
+</div>
+    <!-- === Ad Space === -->
+  <div class="ad-space">
+    <div class="ad-space-placeholder">Ad Space (Before Top Rated Products)</div>
+  </div>
+
+  <!-- === Top Rated Products === -->
+  <div class="section">
+    <h2 class="section-title">
+  <span class="bar">|</span>
+  <span class="text">Top Rated Products</span>
+   </h2>
+    
+    <!-- Row 1 (Updated with Custom Products) -->
+<div class="product-row">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="toprated_r1_c1.jpg" alt="Projector HY300 Pro" />
+    <div class="product-name">Magcubic Projector HY300 Pro 4K Android</div>
+    <div class="product-by">Rating: ★ 4.7</div>
+    <div class="product-price">
+      <span class="old-price">$135.64</span>
+      <span class="new-price">$35.12</span>
+    </div>
+    <div class="sales">+100k sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_oEE2QTU" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="toprated_r1_c2.jpg" alt="Fusion A70 Headphones" />
+    <div class="product-name">Oneodio Fusion A70 Bluetooth Headphones</div>
+    <div class="product-by">Rating: ★ 4.9</div>
+    <div class="product-price">
+      <span class="old-price">$59.99</span>
+      <span class="new-price">$31.31</span>
+    </div>
+    <div class="sales">+1,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_opKhE7y" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="toprated_r1_c3.jpg" alt="R36S Retro Game Console" />
+    <div class="product-name">R36S Retro Handheld Game Console</div>
+    <div class="product-by">Rating: ★ 4.7</div>
+    <div class="product-price">
+      <span class="old-price">$135.91</span>
+      <span class="new-price">$28.41</span>
+    </div>
+    <div class="sales">+2,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_okCEP6C" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <img src="toprated_r1_c4.jpg" alt="Bitfunx PSxMemCard Gen2" />
+    <div class="product-name">Bitfunx PSxMemCard for PS1/PS2</div>
+    <div class="product-by">Rating: ★ 4.9</div>
+    <div class="product-price">
+      <span class="old-price">$48.36</span>
+      <span class="new-price">$10.28</span>
+    </div>
+    <div class="sales">+4,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_omG1m2G" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="product-card">
+    <img src="toprated_r1_c5.jpg" alt="FIFINE USB/XLR Microphone" />
+    <div class="product-name">FIFINE USB/XLR Dynamic Microphone</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$138.61</span>
+      <span class="new-price">$51.38</span>
+    </div>
+    <div class="sales">+4,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_okVbRIC" target="_blank">View</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Row 2 (Updated with Custom Products) -->
+<div class="product-row">
+  <!-- Product 6 -->
+  <div class="product-card">
+    <img src="toprated_r2_c1.jpg" alt="EasySMX X05 Wireless Gamepad" />
+    <div class="product-name">EasySMX X05 Wireless Gamepad RGB</div>
+    <div class="product-by">Rating: ★ 4.9</div>
+    <div class="product-price">
+      <span class="old-price">$49.98</span>
+      <span class="new-price">$20.24</span>
+    </div>
+    <div class="sales">+4,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_olAYvS4" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 7 -->
+  <div class="product-card">
+    <img src="toprated_r2_c2.jpg" alt="QCY MeloBuds Pro ANC Earphones" />
+    <div class="product-name">QCY MeloBuds Pro ANC Bluetooth 5.3</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$89.32</span>
+      <span class="new-price">$31.57</span>
+    </div>
+    <div class="sales">+10,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_opOwJnO" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 8 -->
+  <div class="product-card">
+    <img src="toprated_r2_c3.jpg" alt="Baseus GH02 Gaming Wireless Headphone" />
+    <div class="product-name">Baseus GH02 Gaming Wireless Headphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$119.98</span>
+      <span class="new-price">$46.43</span>
+    </div>
+    <div class="sales">+5,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_oFXOuc4" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 9 -->
+  <div class="product-card">
+    <img src="toprated_r2_c4.jpg" alt="Lenovo GM2 Pro TWS Headphones" />
+    <div class="product-name">Lenovo GM2 Pro TWS Wireless Earphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$7.10</span>
+      <span class="new-price">$4.18</span>
+    </div>
+    <div class="sales">+10,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_oEJIc8k" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 10 -->
+  <div class="product-card">
+    <img src="toprated_r2_c5.jpg" alt="Lenovo XT80 Sports Earphones" />
+    <div class="product-name">Lenovo XT80 Sports Wireless Earphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$25.88</span>
+      <span class="new-price">$8.44</span>
+    </div>
+    <div class="sales">+5,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_okhhvgs" target="_blank">View</a>
+    </div>
+  </div>
+</div>
+
+  <!-- === Ad Space === -->
+  <div class="ad-space">
+    <div class="ad-space-placeholder">Ad Space (Before Regular Products)</div>
+  </div>
+
+  <!-- === Regular Products === -->
+  <div class="section">
+    <h2 class="section-title">
+  <span class="bar">|</span>
+  <span class="text">Regular Products</span>
+    </h2>
+
+    <!-- Row 1 -->
+    <div class="product-row">
+      <div class="product-card"><img src="https://via.placeholder.com/200x120?text=Reg+1" /><div class="product-name">Cable Organizer</div><div class="product-by">By NeatDesk</div><div class="product-price"><span class="old-price">$12</span><span class="new-price">$9</span></div><div class="sales">520 sold</div><div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div></div>
+      <div class="product-card"><img src="https://via.placeholder.com/200x120?text=Reg+2" /><div class="product-name">Notebook</div><div class="product-by">By PaperMate</div><div class="product-price"><span class="old-price">$5</span><span class="new-price">$3</span></div><div class="sales">890 sold</div><div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div></div>
+      <div class="product-card"><img src="https://via.placeholder.com/200x120?text=Reg+3" /><div class="product-name">Wall Clock</div><div class="product-by">By HomeTime</div><div class="product-price"><span class="old-price">$20</span><span class="new-price">$15</span></div><div class="sales">740 sold</div><div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div></div>
+      <div class="product-card"><img src="https://via.placeholder.com/200x120?text=Reg+4" /><div class="product-name">Sticky Notes</div><div class="product-by">By OfficeGo</div><div class="product-price"><span class="old-price">$3</span><span class="new-price">$2</span></div><div class="sales">980 sold</div><div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div></div>
+      <div class="product-card"><img src="https://via.placeholder.com/200x120?text=Reg+5" /><div class="product-name">Pen Set</div><div class="product-by">By WriteOn</div><div class="product-price"><span class="old-price">$6</span><span class="new-price">$4</span></div><div class="sales">1.3k sold</div><div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div></div>
+    </div>
+
+  <!-- Row 2 (Updated with Custom Products) -->
+<div class="product-row">
+  <!-- Product 6 -->
+  <div class="product-card">
+    <img src="toprated_r2_c1.jpg" alt="EasySMX X05 Wireless Gamepad" />
+    <div class="product-name">EasySMX X05 Wireless Gamepad RGB</div>
+    <div class="product-by">Rating: ★ 4.9</div>
+    <div class="product-price">
+      <span class="old-price">$49.98</span>
+      <span class="new-price">$20.24</span>
+    </div>
+    <div class="sales">+4,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_olAYvS4" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 7 -->
+  <div class="product-card">
+    <img src="toprated_r2_c2.jpg" alt="QCY MeloBuds Pro ANC Earphones" />
+    <div class="product-name">QCY MeloBuds Pro ANC Bluetooth 5.3</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$89.32</span>
+      <span class="new-price">$31.57</span>
+    </div>
+    <div class="sales">+10,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_opOwJnO" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 8 -->
+  <div class="product-card">
+    <img src="toprated_r2_c3.jpg" alt="Baseus GH02 Gaming Wireless Headphone" />
+    <div class="product-name">Baseus GH02 Gaming Wireless Headphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$119.98</span>
+      <span class="new-price">$46.43</span>
+    </div>
+    <div class="sales">+5,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_oFXOuc4" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 9 -->
+  <div class="product-card">
+    <img src="toprated_r2_c4.jpg" alt="Lenovo GM2 Pro TWS Headphones" />
+    <div class="product-name">Lenovo GM2 Pro TWS Wireless Earphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$7.10</span>
+      <span class="new-price">$4.18</span>
+    </div>
+    <div class="sales">+10,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_oEJIc8k" target="_blank">View</a>
+    </div>
+  </div>
+
+  <!-- Product 10 -->
+  <div class="product-card">
+    <img src="toprated_r2_c5.jpg" alt="Lenovo XT80 Sports Earphones" />
+    <div class="product-name">Lenovo XT80 Sports Wireless Earphones</div>
+    <div class="product-by">Rating: ★ 4.8</div>
+    <div class="product-price">
+      <span class="old-price">$25.88</span>
+      <span class="new-price">$8.44</span>
+    </div>
+    <div class="sales">+5,000 sold</div>
+    <div class="buttons">
+      <button class="cart-btn">🛒</button>
+      <a class="view-btn" href="https://s.click.aliexpress.com/e/_okhhvgs" target="_blank">View</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- === Ad Space After Regular Products === -->
+<div class="ad-space">
+  <div class="ad-space-placeholder" style="margin: auto; width: fit-content;">
+    Commercial Ad Space (After Regular Products)
+  </div>
+</div>
+<!-- === Extra Product Grid (5 Rows × 2 Columns) === -->
+<div class="section">
+  <h2 class ="more-products-title" style="text-align: center; font-size: 34px; margin-bottom: 16px; border-left: none; padding-left: 0;">More Products</h2>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 5px; row-gap: 16px; justify-content: center;">
+    
+    <!-- Product 1 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+1" />
+      <div class="product-name">USB Fan</div>
+      <div class="product-by">By CoolAir</div>
+      <div class="product-price"><span class="old-price">$15</span><span class="new-price">$11</span></div>
+      <div class="sales">430 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+2" />
+      <div class="product-name">Laptop Stand</div>
+      <div class="product-by">By Elevate</div>
+      <div class="product-price"><span class="old-price">$35</span><span class="new-price">$28</span></div>
+      <div class="sales">710 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+3" />
+      <div class="product-name">Power Bank</div>
+      <div class="product-by">By ChargeOn</div>
+      <div class="product-price"><span class="old-price">$40</span><span class="new-price">$32</span></div>
+      <div class="sales">980 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+4" />
+      <div class="product-name">Desk Lamp</div>
+      <div class="product-by">By ShineLite</div>
+      <div class="product-price"><span class="old-price">$25</span><span class="new-price">$20</span></div>
+      <div class="sales">540 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+5" />
+      <div class="product-name">Mouse Pad</div>
+      <div class="product-by">By GripPad</div>
+      <div class="product-price"><span class="old-price">$10</span><span class="new-price">$7</span></div>
+      <div class="sales">300 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+6" />
+      <div class="product-name">Keychain Light</div>
+      <div class="product-by">By GlowGear</div>
+      <div class="product-price"><span class="old-price">$8</span><span class="new-price">$5</span></div>
+      <div class="sales">640 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+7" />
+      <div class="product-name">Cable Clip</div>
+      <div class="product-by">By TidyUp</div>
+      <div class="product-price"><span class="old-price">$4</span><span class="new-price">$3</span></div>
+      <div class="sales">780 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+8" />
+      <div class="product-name">Portable Speaker</div>
+      <div class="product-by">By BoomBox</div>
+      <div class="product-price"><span class="old-price">$60</span><span class="new-price">$48</span></div>
+      <div class="sales">910 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+9" />
+      <div class="product-name">Tripod</div>
+      <div class="product-by">By SnapPro</div>
+      <div class="product-price"><span class="old-price">$35</span><span class="new-price">$29</span></div>
+      <div class="sales">630 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card" style="margin: auto;">
+      <img src="https://via.placeholder.com/200x120?text=Extra+10" />
+      <div class="product-name">Table Mat</div>
+      <div class="product-by">By DineSmart</div>
+      <div class="product-price"><span class="old-price">$18</span><span class="new-price">$13</span></div>
+      <div class="sales">540 sold</div>
+      <div class="buttons"><button class="cart-btn">🛒</button><a class="view-btn" href="#">View</a></div>
+    </div>
+
+  </div>
+</div>
+
+<body style="margin: 0; padding: 0;">
+
+  <!-- Your page content here -->
+
+<!-- === About Us Section === -->
+<div id = "about-us" style="margin-top: 40px; padding: 20px; background: rgba(0, 0, 0, 0.7); color: white; text-align: center; font-size: 13px;">
+  <h2 class = "about-title">About Us</h2>
+  <p style="max-width: 600px; margin: 0 auto 15px; font-size: 12px; line-height: 1.5;">
+    The company Balaaj-Affiliate-Electronics is group of Balaaj-Marketplace. We are partners with AliExpress. We promote there affiliate products through different social media platforms. We are dedicated to providing high-quality tech and lifestyle products at affordable prices. Your satisfaction is our top priority.
+  </p>
+  
+  <div style="margin-bottom: 6px;">
+    <strong>Email:</strong> <a href="mailto:insaafpakistan123@gmail.com" style="color: #ff99cc; text-decoration: none; font-size: 12px;">insaafpakistan123@gmail.com</a>
+  </div>
+
+  <div style="margin-bottom: 6px;">
+    <strong>Facebook:</strong> <a href="https://www.facebook.com/yourpage" target="_blank" style="color: #ff99cc; text-decoration: none; font-size: 12px;">facebook.com/yourpage</a>
+  </div>
+
+  <div style="margin-bottom: 6px;">
+    <strong>Instagram:</strong> <a href="https://www.instagram.com/yourprofile" target="_blank" style="color: #ff99cc; text-decoration: none; font-size: 12px;">@yourprofile</a>
+  </div>
+
+  <div>
+    <strong>WhatsApp:</strong> <a href="https://wa.me/923001234567" target="_blank" style="color: #ff99cc; text-decoration: none; font-size: 12px;">+92 3195582719</a>
+  </div>
+</div>
+
+</body>
+</html>
